@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+root = File.dirname(File.dirname(File.expand_path(__FILE__)))
+$LOAD_PATH << File.join(root, 'lib')
+
+require 'lb-rb'
+require 'capybara'
+
+Capybara.register_server :webrick_log do |app, port, host|
+  require 'rack/handler/webrick'
+  Rack::Handler::WEBrick.run(
+    app,
+    Host: host,
+    Port: port,
+    Logger: WEBrick::Log.new(File.join(root, 'webrick.log'), 5)
+  )
+end
+
+Capybara.server = :webrick_log
+
+Capybara
+  .server
+  .call(
+    Capybara::Server::Middleware.new(LB::RB::App.freeze.app),
+    '12345',
+    '127.0.0.1'
+  )

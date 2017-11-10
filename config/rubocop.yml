@@ -1,0 +1,6 @@
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'

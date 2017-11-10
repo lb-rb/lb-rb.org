@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+root = File.dirname(File.dirname(File.expand_path(__FILE__)))
+$LOAD_PATH << File.join(root, 'lib')
+
+require 'lb-rb'
+
+Capybara
+  .server
+  .call(
+    Capybara::Server::Middleware.new(LB::RB::App.freeze.app),
+    '12345',
+    '127.0.0.1'
+  )

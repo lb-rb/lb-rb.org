@@ -1,0 +1,19 @@
+#!/bin/bash
+
+while true; do
+    echo "This command will do a destructive rewrite with git filter-branch, generates the stats and execute
+    'git reset --hard
+to revert all local changes!
+
+!!!WARNING!!! YOU WILL LOSE ALL LOCAL CHANGES!" 1>&2
+read -p "Is your branch clean and pushed? (Enter n if unsure!) [Yy/Nn] " yn
+    case $yn in
+        [Yy]* ) break;;
+        [Nn]* ) echo "aborted by user" >&2; exit 1;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+git filter-branch -f --tree-filter 'rm -rf public' HEAD
+gitstats .git stats
+git reset --hard refs/original/refs/heads/master

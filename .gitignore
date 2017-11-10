@@ -1,0 +1,55 @@
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.sw[op]
+
+## Rubinius
+*.rbc
+.rbx
+
+## PROJECT::GENERAL
+*.gem
+coverage
+profiling
+turbulence
+rdoc
+pkg
+tmp
+doc
+log
+.yardoc
+measurements
+
+## BUNDLER
+.bundle
+Gemfile.lock
+
+## ctags
+tags
+gems.tags
+
+## PROJECT::SPECIFIC
+.idea
+
+# Webpack
+.tmp
+webrick\.log
+
+# NPM
+node_modules
+
+# sqlite files
+*.db
+
+# byebug
+.byebug_history
