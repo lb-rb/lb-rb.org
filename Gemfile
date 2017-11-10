@@ -5,12 +5,12 @@ ruby '2.4.2'
 
 # Dry
 gem 'dry-initializer', '~> 2.3', '< 2.4'
-gem 'dry-struct', '~> 0.3', '< 0.4'
+gem 'dry-struct', '~> 0.4', '< 0.5'
 gem 'dry-types', '~> 0.12', '< 0.13'
 gem 'dry-view', '~> 0.3', '>= 0.3.0', '< 0.3.1'
 
 # Build
-gem 'rake', '~> 12.0.0', '< 12.1'
+gem 'rake', '~> 12.0.0', '< 12.3'
 
 # Web
 gem 'shotgun', '~> 0.9.2', '< 0.10'
