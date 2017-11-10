@@ -5,8 +5,8 @@
 [![Dependency Status](https://gemnasium.com/lb-rb/lb-rb.org.svg)][gemnasium]
 
 Build with our static site builder based on
-(https://github.com/dry-rb/dry-view)[dry-view] and
-(http://roda.jeremyevans.net/)[Roda] for easy migration to Roda routing.
+[dry-view](https://github.com/dry-rb/dry-view) and
+[Roda](http://roda.jeremyevans.net/) for easy migration to Roda routing.
 
 ## Credits
 
