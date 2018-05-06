@@ -10,8 +10,9 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var AssetsPlugin = require('assets-webpack-plugin');
  
 module.exports = {
- // debug: true,
- // devtool: "source-map",
+  // debug: true,
+  // devtool: "source-map",
+  mode: 'production',
 
   entry: {
     main: [
