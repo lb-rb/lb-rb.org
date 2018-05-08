@@ -46,7 +46,7 @@ FileUtils.mkdir_p SPEC_ROOT.join('../log')
 
 def phantomjs_options
   return [] if ENV.key?('SCREENSHOTS')
-  %w(--load-images=no)
+  %w[--load-images=no]
 end
 
 Capybara.register_driver :poltergeist do |app|

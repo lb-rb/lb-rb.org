@@ -36,7 +36,7 @@ guard :rspec, cmd: 'bundle exec rspec ' +
   watch(%r{\Aspec/(?:unit|integration|features)/.+_spec\.rb\z})
 end
 
-guard :rubocop, cli: %w(--config config/rubocop.yml) do
+guard :rubocop, cli: %w[--config config/rubocop.yml] do
   watch(/.+\.(?:rb|rake)\z/)
   watch(%r{\Aconfig/rubocop\.yml\z})  { |m| File.dirname(m[0]) }
   watch(%r{(?:.+/)?\.rubocop\.yml\z}) { |m| File.dirname(m[0]) }
