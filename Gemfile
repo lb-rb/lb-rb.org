@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-ruby '2.5.0'
+ruby '2.5.1'
 
-gem 'lb-project', '~> 0.0.1'
+gem 'lb-project', '~> 0.1.0'
 
 gem 'slim', '~> 3.0', '>= 3.0.9'
 

@@ -15,7 +15,18 @@ require 'lb/rb/version'
 module LB
   # RB
   module RB
-    LB::Project.setup(LB::Project.root_for(__FILE__, 3))
+    ROOT = LB::Project.root_for(__FILE__, 3)
+    CONFIG_FILE = File.join(ROOT, 'config/application.yml')
+
+    def self.setup
+      settings = LB::Project::Settings.new(
+        root: ROOT,
+        config: LB::Project::Config.load(CONFIG_FILE)
+      )
+      LB::Project.setup(settings)
+    end
+
+    setup
   end
 end
 
